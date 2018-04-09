@@ -12,7 +12,7 @@
 
 <body>
   <header>
-    <nav>
+    <nav role="navigation">
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
   </header>
@@ -21,7 +21,7 @@
     <section id="map-container">
       <div id="map"></div>
     </section>
-    <section>
+    <section class="restaurant-listing">
       <div class="filter-options">
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
@@ -31,7 +31,7 @@
           <option value="all">All Cuisines</option>
         </select>
       </div>
-      <ul class="flex-container" id="restaurants-list"></ul>
+      <ul class="restaurant-container" id="restaurants-list"></ul>
     </section>
   </main>
 
