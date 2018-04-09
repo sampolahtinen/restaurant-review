@@ -139,20 +139,27 @@ createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
   li.className= 'flex-item';
   const image = document.createElement('img');
+  image.setAttribute('alt','Picture of the restaurant')
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+  name.setAttribute('aria-labelledby','restaurant-name');
   li.append(name);
 
+  const neighborhoodDiv = document.createElement('div');
+  neighborhoodDiv.setAttribute('aria-label','Neighborhood of the restaurant is')
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
-  li.append(neighborhood);
+  //li.append(neighborhood);
+  neighborhoodDiv.append(neighborhood);
+  li.append(neighborhoodDiv);
 
   const address = document.createElement('p');
   address.innerHTML = restaurant.address;
+  address.setAttribute('aria-label','Adrress of the restaurant');
   li.append(address);
 
   const more = document.createElement('a');
