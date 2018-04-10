@@ -85,6 +85,9 @@ nav h1 {
   margin: auto;
   font-size: 1.2em;
   padding-top: 25px;
+  @media  screen and (min-width: $break-mobile) {
+    padding-top: 3.5vh;
+  }
 }
 nav h1 a {
   color: #fff;
@@ -92,6 +95,9 @@ nav h1 a {
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase; 
+  @media screen and (min-width: $break-mobile) {
+    font-size: 2rem;
+  }
 }
 .inside nav h1 a {
   color: #fff;
