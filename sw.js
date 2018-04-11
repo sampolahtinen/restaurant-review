@@ -12,7 +12,7 @@ self.addEventListener('install',function(event){
                 '/data/restaurants.json'
             ]);
         })
-    )
+    );
 });
 
 //Dynamically add all requests ending in ".jpg" to cache
@@ -25,22 +25,26 @@ self.addEventListener('fetch',function(event){
             return new Response('Failed to load');
         });
     }
+    /*const url = new URL(event.request.url);
+    if (url.pathname.startsWith('/restaurant.html')) {
+        caches.open('v1').then(cache => { cache.add(event.request.url);
+        }).catch(function(error){
+            return error;
+        });
+  } */
 });
-
-/*
-//Store google to cache
-self.addEventListener('fetch',function(event){
-    if(event.request.url.includes('https://maps.googleapis.com/maps/api/js')) {
-        console.log(event.request.url);
-            caches.open('v1').then(function(cache){
-                return cache.add(event.request.url);
-            })
-    }
-});
-*/
 
 //Load from cache
 self.addEventListener('fetch',function (event) {
+    const url = new URL(event.request.url);
+
+    if (url.pathname.startsWith('/restaurant.html')) {
+        event.respondWith(
+            caches.match('restaurant.html')
+            .then(response => response || fetch(event.request)).catch(error =>  error)
+        );
+        return;
+  }
     event.respondWith(
         caches.match(event.request).then(function (response) {
             if (response) return response;

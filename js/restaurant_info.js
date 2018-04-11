@@ -1,6 +1,20 @@
 let restaurant;
 var map;
 
+
+// Registering Service Worker
+/*if ('serviceWorker' in navigator) {
+  if (navigator.serviceWorker.controller.state === "activated") return;
+  navigator.serviceWorker.register('/sw.js', {scope: '/'})
+  .then(function(reg) {
+    // registration worked
+    console.log('Registration succeeded. Scope is ' + reg.scope);
+  }).catch(function(error) {
+    // registration failed
+    console.log('Registration failed with ' + error);
+  });
+}*/
+
 /**
  * Initialize Google map, called from HTML.
  */
@@ -99,7 +113,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 

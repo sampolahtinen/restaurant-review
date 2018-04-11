@@ -16,29 +16,31 @@
   <!-- Beginning header -->
   <header>
     <!-- Beginning nav -->
-    <nav role="navigation">
+    <nav class="main-navigation" role="navigation">
       <h1><a href="/">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" aria-label="breadcrumb">
-      <li><a href="/">Home</a></li>
-    </ul>
+    <nav class="breadcrumb-nav" role="navigation" aria-label="breadcrumb">
+      <ul id="breadcrumb">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
   <!-- End header -->
 
   <!-- Beginning main -->
-  <main id="maincontent" role="main">
+  <main class="restinfo-mobile" id="maincontent" role="main">
     <!-- Beginning map -->
-    <section id="map-container" tabindex="-1" aria-label="google map" aria-hidden="true" >
-      <div id="map"></div>
+    <section id="map-container" tabindex="-1" aria-hidden="true" >
+      <div id="map" role="application" aria-label="Google Maps"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container" role="region" aria-label="restaurant info" tabindex="1">
       <div class="name-address-wrapper" aria-labelledby="restaurant-name">
-        <h1 id="restaurant-name"></h1>
+        <h2 id="restaurant-name"></h1>
         <p  id="restaurant-address"></p>
       </div>
       <img id="restaurant-img">

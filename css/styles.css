@@ -71,9 +71,11 @@ header {
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 10vh;
   background-color: #252831;
   text-align: center; }
+
+.main-navigation {
+  min-height: 10vh; }
 
 nav h1 {
   margin: auto;
@@ -95,7 +97,7 @@ nav h1 a {
 
 .inside nav h1 a {
   color: #fff;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase; }
@@ -111,6 +113,11 @@ nav h1 a {
   @media screen and (min-width: 700px) {
     #breadcrumb {
       width: 38.1953vw; } }
+
+.breadcrumb-nav {
+  width: 38.1953vw;
+  text-align: left;
+  height: 5vh; }
 
 /* Display list items side by side */
 #breadcrumb li {
@@ -234,6 +241,10 @@ nav h1 a {
     line-height: 1.3;
     margin: 20px 0 10px;
     text-transform: uppercase; }
+  #restaurants-list h2 {
+    font-style: normal;
+    padding: 15px 0 0 0;
+    margin-bottom: 5px; }
   #restaurants-list p {
     margin: 0;
     font-size: 11pt; }
@@ -422,9 +433,26 @@ nav h1 a {
     color: #6f778a; }
 
 @media screen and (max-width: 700px) {
+  nav h1 {
+    margin: auto;
+    font-size: 1.2em;
+    padding-top: 3vh; }
+  .inside nav h1 {
+    padding-top: 3.6vh; }
+  .inside nav h1 a {
+    font-size: 1.6rem; }
+  nav h1 {
+    padding-top: 3.6vh; }
+  nav h1 a {
+    font-size: 1.6rem; }
   #maincontent {
     flex-flow: column nowrap;
-    margin-top: 74px; }
+    margin-top: 10vh; }
+  .restinfo-mobile {
+    margin-top: 16vh; }
+  .breadcrumb {
+    height: 5vh;
+    text-align: left; }
   footer {
     margin-top: 20px; }
   .filter-options {
@@ -449,14 +477,14 @@ nav h1 a {
   .inside #map-container {
     position: relative;
     order: 1;
-    height: 40vh;
+    max-height: 40vh;
     width: 100%;
     margin-bottom: 0;
     top: 0; }
   #map-container {
     position: relative;
     order: 1;
-    height: 40vh;
+    max-height: 40vh;
     width: 100%;
     margin-bottom: 0;
     top: 0; }
