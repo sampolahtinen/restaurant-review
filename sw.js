@@ -3,6 +3,7 @@ self.addEventListener('install',function(event){
     event.waitUntil(
         caches.open('v1').then(function(cache){
             return cache.addAll([
+                '/',
                 'index.html',
                 'restaurant.html',
                 '/css/styles.css',
@@ -25,13 +26,13 @@ self.addEventListener('fetch',function(event){
             return new Response('Failed to load');
         });
     }
-    /*const url = new URL(event.request.url);
+    const url = new URL(event.request.url);
     if (url.pathname.startsWith('/restaurant.html')) {
         caches.open('v1').then(cache => { cache.add(event.request.url);
         }).catch(function(error){
             return error;
         });
-  } */
+  } 
 });
 
 //Load from cache

@@ -2,9 +2,8 @@ let restaurant;
 var map;
 
 
-// Registering Service Worker
-/*if ('serviceWorker' in navigator) {
-  if (navigator.serviceWorker.controller.state === "activated") return;
+// Registering Service Worker also when loading restaurant info page
+if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js', {scope: '/'})
   .then(function(reg) {
     // registration worked
@@ -13,7 +12,7 @@ var map;
     // registration failed
     console.log('Registration failed with ' + error);
   });
-}*/
+}
 
 /**
  * Initialize Google map, called from HTML.
